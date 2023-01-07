@@ -6,22 +6,56 @@ let arr = [
   { id: 3, name: "karen", age: "19", profession: "admin" },
 ];
 
+//----------------------------------Map Function------------------------------
 function PrintDeveloperswithMap() {
-  //Write your code here
+  // employees who have the profession of a developer using the map function.
+  let developers = arr.map(function (arrayItem) {
+    if (arrayItem.profession === "developer") {
+      return arrayItem;
+    }
+  });
+  console.log(developers);
 }
 
+//----------------------------------For Each Function------------------------------
 function PrintDeveloperbyForEach() {
-  //Write your code here
+  //employees who have the profession of a developer using the for each function.
+  arr.forEach(foreach); 
+  function foreach(arrayItem) {
+    if (arrayItem.profession === "developer") { //=== strictly equal
+      console.log(arrayItem);
+    }
+  }
 }
 
+//----------------------------------Add Data Function------------------------------
 function addData() {
-  //Write your code here
+  //add new data
+  let newdata = { id: 4, name: "susan", age: "20", profession: "intern" };//new data from question
+  arr.push(newdata);// arr from top
+  console.log(arr);
 }
 
+//----------------------------------Remove Admin Function------------------------------
 function removeAdmin() {
-  //Write your code here
+  // remove the object where the profession is admin. console.log the changed array.
+  let remove = arr.filter(function (val) {
+    if (val.profession !== "admin") {
+      return val;
+    }
+  });
+  console.log(remove);
 }
 
+//----------------------------------Concatinate Function------------------------------
 function concatenateArray() {
-  //Write your code here
+  //creating new array with 3 objects
+  let arr2 = [
+    { id: 5, name: "Karthik", age: "22", profession: "Programmer" },
+    { id: 6, name: "Selva", age: "23", profession: "devloper" },
+    { id: 7, name: "Rami", age: "26", profession: "developer" },
+  ];
+
+  let concatenate = arr.concat(arr2);
+  console.log(concatenate);
 }
